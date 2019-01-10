@@ -15,6 +15,7 @@ mkdir lib
 ```
 
 #### 2. Create Gem Spec using Template
+local_gem.gemspec
 ```
 Gem::Specification.new do |s|
   s.name = %q{local_gem}
@@ -23,7 +24,7 @@ Gem::Specification.new do |s|
   s.date = %q{2019-01-01}
   s.summary = %q{Gem Description}
   s.files = [
-    "lib/Local_gem.rb"
+    "lib/local_gem.rb"
   ]
   s.require_paths = ["lib"]
 end
@@ -32,7 +33,7 @@ end
 #### 3. - Add Code to lib
 Put **1** ruby file in lib **/lib/local_gem.rb**
 ```
-module Local_gem
+module local_gem
   class Person
     def self.name?
       puts "Name: Jonorsky"
@@ -51,9 +52,9 @@ gem build local_gem.gemspec
 You should see the following output
 ```
 Successfully built RubyGem
-  Name: local_gem
-  Version: 0.0.0
-  File: local_gem-0.0.0.gem
+Name: local_gem
+Version: 0.0.0
+File: local_gem-0.0.0.gem
 ```
 
 > The Generated Gem will be rename as 'local_gem-0.0.0.gem'
@@ -71,6 +72,26 @@ cd Desktop
 mkdir project
 cd project
 ```
+
+Install Ruby in that Folder Directory, Find the path of the **local_gem-0.0.0.gem** by right click the file > then copy the Path in *Parent Folder*
+
+> /home/*YourAccountName/Desktop/own_gem/local_gem-0.0.0.gem
+
+After that execute this command in order to install your Gem in **project** directory
+```
+gem install --local /home/*YourAccountName/Desktop/own_gem/local_gem-0.0.0.gem
+```
+
+The output must be
+```
+Successfully installed local_gem-0.0.0
+Parsing documentation for local_gem-0.0.0
+Installing ri documentation for local_gem-0.0.0
+Done installing documentation for local_gem after 0 seconds
+1 gem installed
+```
+
+### Run Created Gem in the Ruby File
 
 Create your Ruby File in project folder with **test_gem.rb**
 
